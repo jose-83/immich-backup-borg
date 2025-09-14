@@ -1,0 +1,30 @@
+# Ignore Helm-related temporary and release files
+*.tgz
+.chart.lock
+.release.yaml
+.charts/
+Chart.lock
+
+# Ignore Helm artifact files (e.g., packages and release artifacts)
+*.tgz
+*.lock
+*.tgz.prov
+
+# Ignore build directories and caches
+output/
+build/
+.cache/
+.tmp/
+
+# Ignore system files and IDE/editor specific files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore logs and debug files
+*.log
+*.tmp
+debug.log
