@@ -31,6 +31,13 @@ DB_DUMP_FILE="$DB_DUMP_DIR/immich-database.sql"
 REMOTE_DB_DIR="$REMOTE_BACKUP_PATH/db-dumps"
 REMOTE_DB_KEEP=10  # keep latest 10 standalone .sql files
 
+# Function to add timestamps to output
+timestamp_output() {
+  while IFS= read -r line; do
+    echo "$(date -Is) $line"
+  done
+}
+
 do_dump() {
   echo "[DB] Dumping Postgres from container '$PG_CONTAINER'..."
   mkdir -p "$DB_DUMP_DIR"
@@ -76,4 +83,4 @@ do_remote() {
     *)      echo "Unknown mode: $MODE" >&2; exit 2 ;;
   esac
   echo "=== $(date -Is) Done (mode=$MODE) ==="
-} >> "$LOG_FILE" 2>&1
+} 2>&1 | timestamp_output >> "$LOG_FILE"
