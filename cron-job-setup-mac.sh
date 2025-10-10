@@ -4,6 +4,9 @@ sudo pmset repeat wakeorpoweron We 02:14:00
 # Verify:
 sudo pmset -g sched
 
+# Cancel
+sudo pmset repeat cancel
+
 # Enable "Wake for network access" (Wake-on-LAN), run once, cancel it by changing 1 to 0
 sudo pmset -a womp 1
 
