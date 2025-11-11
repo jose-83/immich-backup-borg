@@ -3,7 +3,9 @@ I assume you know how to create a bootable SD card. More info can be found [here
 <br />Don't forget to change the setting and for the first time set up the ssh connection with the username and password.
 <br />If you try multiple OSs and install a new version and get an error, try:
 ```bash
-ssh-keygen -R pi5@ip-address-of-pi
+ssh-keygen -R ip-address-of-pi
+# then
+ssh pi5@ip-address-of-pi
 ```
 First, use a SD card. Install the linux version that you want. Then, run:
 ```bash
